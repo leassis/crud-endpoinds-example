@@ -1,0 +1,32 @@
+crud:
+  base-path: '/api'
+  id-class: java.lang.Long
+  endpoints:
+    - path: '/contacts'
+      entity-class: com.lassis.contacts.entity.Contact
+      dto-class: com.lassis.contacts.api.model.ContactInfo
+      page-size: 25
+      methods:
+        - get
+        - post
+        - put
+        - delete
+      sub:
+        - path: '/emails'
+          entity-class: com.lassis.contacts.entity.Email
+          dto-class: com.lassis.contacts.api.model.EmailInfo
+          page-size: 25
+          methods:
+            - get
+            - post
+            - put
+            - delete
+        - path: '/phones'
+          entity-class: com.lassis.contacts.entity.Phone
+          dto-class: com.lassis.contacts.api.model.PhoneInfo
+          page-size: 25
+          methods:
+            - get
+            - post
+            - put
+            - delete
