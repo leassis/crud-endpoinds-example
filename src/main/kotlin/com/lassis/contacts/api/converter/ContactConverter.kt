@@ -2,12 +2,12 @@ package com.lassis.contacts.api.converter
 
 import com.lassis.contacts.api.model.ContactInfo
 import com.lassis.contacts.entity.Contact
-import com.lassis.springframework.crud.service.DtoConverter
+import com.lassis.springframework.crud.service.SingleDtoConverter
 import org.springframework.stereotype.Component
 
 @Component
 class ContactConverter(val emailConverter: EmailConverter, val phoneConverter: PhoneConverter) :
-    DtoConverter<ContactInfo, Contact> {
+    SingleDtoConverter<ContactInfo, Contact> {
 
     override fun fromDto(obj: ContactInfo): Contact {
 
